@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Hotel </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/reserva.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			<a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+				<span class="fa-4">Gerenciamento de Hotel</span></a>
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+				<li class="nav-item"><a href="hospede.html" class="nav-link">HÓSPEDE</a></li>
+				<li class="nav-item"><a href="quarto.html" class="nav-link">QUARTOS</a></li>
+				<li class="nav-item"><a href="reserva.html" class="nav-link active">RESERVA</a></li>
+			</ul>
+		</header>
+		<div class="content">
+			<h2>RESERVA</h2>
+			<button class="btn btn-primary mb-3" onclick="showAddReservationForm()">Incluir</button>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Numero</th>
+						<th>DataCheckin</th>
+						<th>HoraCheckin</th>
+						<th>DataCheckout</th>
+						<th>HoraCheckout</th>
+					</tr>
+				</thead>
+				<tbody id="reservationTableBody">
+					<!-- Reserva serao carregados aqui-->
+				</tbody>
+			</table>
+		</div>
+		<div id="reservationFormModal" style="display:none;">
+			<h3 id="formTitle">Incluir Reserva</h3>
+			<form id="reservationForm">
+				<input type="hidden" id="reservationId">
+				<div class="mb-3">
+					<label for="reservationGuest" class="form-label">Id Hospede</label>
+					<input type="number" class="form-control" id="reservationGuest">
+				</div>
+				<div class="mb-3">
+					<label for="reservationRoom" class="form-label">Id Quarto</label>
+					<input type="number" class="form-control" id="reservationRoom">
+				</div>
+				<div class="mb-3">
+					<label for="reservationDataCheckin" class="form-label">Data Checkin</label>
+					<input type="text" class="form-control" id="reservationDataCheckin">
+				</div>
+				<div class="mb-3">
+					<label for="reservationHoraCheckin" class="form-label">Hora Checkin</label>
+					<input type="text" class="form-control" id="reservationHoraCheckin">
+				</div>
+				<div class="mb-3">
+					<label for="reservationDataCheckout" class="form-label">Data Checkout</label>
+					<input type="text" class="form-control" id="reservationDataCheckout">
+				</div>
+				<div class="mb-3">
+					<label for="reservationHoraCheckout" class="form-label">Hora Checkout</label>
+					<input type="text" class="form-control" id="reservationHoraCheckout">
+				</div>
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-secondary" onclick="closeReservationForm()">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
